@@ -1,0 +1,233 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+/* Define Variables */
+$primary-color: #007BFF;
+$secondary-color: #0056b3;
+$background-color: #333;
+$text-color: #fff;
+$light-gray: #f4f4f4;
+$dark-gray: #575757;
+$max-width: 1200px;
+
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.font-roboto {
+    font-family: 'Roboto', sans-serif;
+}
+/* Header Styles */
+.header {
+  background-color: $background-color;
+  color: $text-color;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Roboto', sans-serif;
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .text-container {
+        position: relative;
+        display: inline-block;
+      }
+      
+    .blinking-cursor {
+    display: inline-block;
+    width: 0.5em; /* Adjust width to match the character width more accurately */
+    height: 1em; /* Match the height of the text */
+    background-color: $text-color; /* Make the cursor a solid block */
+    margin-left: -0.2em; /* Adjust margin to position cursor correctly */
+    animation: blink 1s step-end infinite;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+
+      li {
+        margin: 0;
+
+        a {
+          color: $text-color;
+          padding: 0.5rem 1rem;
+          transition: background 0.3s;
+
+          &:hover {
+            background-color: $dark-gray;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Hero Section Styles */
+.hero {
+  height: 100vh;
+  background: url('../assets/hero_bg.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $text-color;
+  text-align: center;
+  padding: 0 1rem;
+
+  .hero-content {
+    max-width: 800px;
+
+    h1 {
+      font-size: 7rem;
+      
+      .first-word {
+        color: $text-color; // Change this to your desired color
+        font-weight: lighter; // Additional style
+      }
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+  }
+
+  .btn {
+    background-color: $primary-color;
+    color: $text-color;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+}
+
+/* About Section Styles */
+.about {
+  padding: 5rem 1rem;
+  background-color: $light-gray;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+/* Projects Section Styles */
+.projects {
+  padding: 5rem 1rem;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+
+    .project-item {
+      background-color: #fff;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 300px;
+      text-align: left;
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+/* Contact Section Styles */
+.contact {
+  padding: 5rem 1rem;
+  background-color: $light-gray;
+  text-align: center;
+  margin: auto;
+  max-width: 800px;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+  }
+
+  button.btn {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+}
+
+/* Footer Styles */
+.footer {
+  font-family: 'Roboto', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  text-align: center;
+  padding: 1rem 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
