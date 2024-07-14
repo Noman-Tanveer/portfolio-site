@@ -1,0 +1,18 @@
+<header class="header">
+    <nav class="navbar">
+      <div class="logo"><span class="first-word">Noman</span> Tanveer
+        <div class="text-container">
+          <span class="blinking-cursor"></span>
+        </div>
+      </div>
+      
+      <ul class="nav-links">
+        <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+        <li><a href="/home#about">About</a></li>
+        <li><a href="/home#contact">Contact</a></li>
+        <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
+        <li><a (click)="goToLink('https://medium.com/@nomantanveer021/about')">Blog <sup><fa-icon [icon]="faExternalLinkAlt"></fa-icon></sup></a></li>
+      </ul>
+      <router-outlet></router-outlet>      
+    </nav>
+  </header>

@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* Define Variables */
+$primary-color: #007BFF;
+$secondary-color: #0056b3;
+$background-color: #333;
+$text-color: #fff;
+$light-gray: #f4f4f4;
+$dark-gray: #575757;
+$max-width: 1200px;
+
+.header {
+  background-color: $background-color;
+  color: $text-color;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Roboto', sans-serif;
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+
+      // Make the first word leaner
+      span.first-word {
+        font-weight: 400; // lighter weight
+      }
+    }
+
+    .text-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .blinking-cursor {
+      display: inline-block;
+      width: 0.5em; /* Adjust width to match the character width more accurately */
+      height: 1em; /* Match the height of the text */
+      background-color: $text-color; /* Make the cursor a solid block */
+      margin-left: -0.2em; /* Adjust margin to position cursor correctly */
+      animation: blink 1s step-end infinite;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+
+      li {
+        margin: 0;
+
+        a {
+          color: $text-color;
+          padding: 0.5rem 1rem;
+          transition: background 0.3s;
+
+          &:hover {
+            background-color: $dark-gray;
+          }
+
+          fa-icon {
+            margin-left: 0rem;
+            font-size: 0.7rem; /* Adjust the size as needed */
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.01%, 100% {
+    opacity: 0;
+  }
+}
