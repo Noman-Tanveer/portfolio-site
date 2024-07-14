@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AssiatantChatbotComponent } from './assiatant-chatbot/assiatant-chatbot.component';
 import { HomeComponent } from './home/home.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     AssiatantChatbotComponent,
     HomeComponent,
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,
