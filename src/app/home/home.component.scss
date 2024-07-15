@@ -164,7 +164,7 @@ a {
   }
 
   .link-table {
-    width: 100%;
+    width: calc(100% - 2rem);
     border-collapse: collapse;
     padding: 0;
     margin: 2rem 0;

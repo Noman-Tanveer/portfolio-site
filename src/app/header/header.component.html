@@ -14,9 +14,9 @@
     </div>
 
     <ul class="nav-links" [class.active]="menuActive">
-      <li><a routerLink="/home" routerLinkActive="active" (click)="toggleMenu()">Home</a></li>
-      <li><a href="/home#about" (click)="toggleMenu()">About</a></li>
-      <li><a href="/home#contact" (click)="toggleMenu()">Contact</a></li>
+      <li><a routerLink="/home" fragment="home" routerLinkActive="active" (click)="navigateToSection('home')">Home</a></li>
+      <li><a routerLink="/home" fragment="about" routerLinkActive="active" (click)="navigateToSection('about')">About</a></li>
+      <li><a routerLink="/home" fragment="contact" routerLinkActive="active" (click)="navigateToSection('contact')">Contact</a></li>
       <li><a routerLink="/projects" routerLinkActive="active" (click)="toggleMenu()">Projects</a></li>
       <li><a (click)="goToLink('https://medium.com/@nomantanveer021/about')">Blog <sup><fa-icon [icon]="faExternalLinkAlt"></fa-icon></sup></a></li>
     </ul>
