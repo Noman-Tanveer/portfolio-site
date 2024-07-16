@@ -164,10 +164,13 @@ a {
   }
 
   .link-table {
-    width: calc(100% - 2rem);
+    width: 95%;
     border-collapse: collapse;
     padding: 0;
-    margin: 2rem 0;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
   }
 
   .link-table td {
@@ -205,8 +208,10 @@ a {
 
     input,
     textarea {
-      width: calc(100% - 2rem);
+      width: 95%;
       padding: 0.5rem;
+      padding-left: auto;
+      padding-right: auto;
       border: 1px solid #ddd;
       border-radius: 5px;
     }
@@ -224,16 +229,6 @@ a {
     &:hover {
       background-color: $secondary-color;
     }
-  }
-}
-
-/* Keyframes for Blinking Cursor */
-@keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-  50.01%, 100% {
-    opacity: 0;
   }
 }
 

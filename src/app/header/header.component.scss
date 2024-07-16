@@ -31,9 +31,8 @@ $max-width: 1200px;
       font-size: 1.5rem;
       font-weight: bold;
 
-      // Make the first word leaner
       span.first-word {
-        font-weight: 400; // lighter weight
+        font-weight: 400;
       }
     }
 
@@ -44,10 +43,10 @@ $max-width: 1200px;
 
     .blinking-cursor {
       display: inline-block;
-      width: 0.5em; /* Adjust width to match the character width more accurately */
-      height: 1em; /* Match the height of the text */
-      background-color: $text-color; /* Make the cursor a solid block */
-      margin-left: -0.2em; /* Adjust margin to position cursor correctly */
+      width: 0.5em;
+      height: 1em;
+      background-color: $text-color;
+      margin-left: -0.2em;
       animation: blink 1s step-end infinite;
     }
 
@@ -86,7 +85,7 @@ $max-width: 1200px;
 
           fa-icon {
             margin-left: 0rem;
-            font-size: 0.7rem; /* Adjust the size as needed */
+            font-size: 0.7rem;
           }
         }
       }
