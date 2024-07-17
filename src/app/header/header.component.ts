@@ -10,7 +10,7 @@ import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 export class HeaderComponent implements OnInit {
   menuActive: boolean = false;
   faExternalLinkAlt = faExternalLinkAlt;
-  
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {
@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
       }
     });
   }
-  
+
   goToLink(url: string) {
     window.open(url, "_blank");
   }

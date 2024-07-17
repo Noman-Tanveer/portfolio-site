@@ -6,11 +6,11 @@
         <span class="blinking-cursor"></span>
       </div>
     </div>
-
-    <div class="menu-toggle" (click)="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+    
+    <div class="burger-menu" (click)="toggleMenu()">
+      <div class="burger-container">
+        <div class="burger-inner"></div>
+      </div>
     </div>
 
     <ul class="nav-links" [class.active]="menuActive">
