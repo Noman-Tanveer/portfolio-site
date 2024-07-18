@@ -18,7 +18,7 @@ export class AssiatantChatbotComponent {
   constructor() {
     // Dummy initialization for demonstration
     this.messages = [
-      { text: 'Hello! I am ChattyBot Noman\'s assistant, How can I help you today?', user: false },
+      { text: 'Hello! How can I help you code today?', user: false },
     ];
   }
 

@@ -112,6 +112,7 @@ $burger-bar-color: $text-color;
       list-style: none;
       display: flex;
       gap: 1rem;
+      align-items: flex-end;
 
       li {
         margin: 0;
@@ -145,6 +146,7 @@ $burger-bar-color: $text-color;
         li {
           display: flex; // Display list items
           margin: 0;
+          width: 100%; // Ensure full width for hover and clickable area
   
           &:hover {
             background-color: $dark-gray; // Apply background color on hover

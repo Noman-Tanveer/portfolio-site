@@ -1,11 +1,11 @@
 <header class="header">
   <nav class="navbar">
-    <div class="logo">
+    <a class="logo" routerLink="/home">
       <span class="first-word">Noman</span> Tanveer
       <div class="text-container">
         <span class="blinking-cursor"></span>
       </div>
-    </div>
+    </a>
     
     <div class="burger-menu" (click)="toggleMenu()" [class.active]="menuActive">
       <div class="burger-container">
