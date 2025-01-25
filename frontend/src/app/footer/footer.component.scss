@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+/* Define Variables */
+$primary-color: #007BFF;
+$secondary-color: #0056b3;
+$background-color: #333;
+$text-color: #fff;
+$light-gray: #f4f4f4;
+$dark-gray: #575757;
+$max-width: 1200px;
+
+.footer {
+    font-family: 'Roboto', sans-serif;
+    background-color: $background-color;
+    color: $text-color;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    width: 100%;
+    padding-top: 20px;
+    bottom: 0;
+  }

@@ -1,0 +1,24 @@
+<header class="header">
+  <nav class="navbar">
+    <a class="logo" routerLink="/home">
+      <span class="first-word">Noman</span> Tanveer
+      <div class="text-container">
+        <span class="blinking-cursor"></span>
+      </div>
+    </a>
+    
+    <div class="burger-menu" (click)="toggleMenu()" [class.active]="menuActive">
+      <div class="burger-container">
+        <div class="burger-inner"></div>
+      </div>
+    </div>
+
+    <ul class="nav-links" [class.active]="menuActive">
+      <li><a routerLink="/home" fragment="home" routerLinkActive="active" (click)="navigateToSection('home')">Home</a></li>
+      <li><a routerLink="/home" fragment="about" routerLinkActive="active" (click)="navigateToSection('about')">About</a></li>
+      <li><a routerLink="/home" fragment="contact" routerLinkActive="active" (click)="navigateToSection('contact')">Contact</a></li>
+      <li><a routerLink="/projects" routerLinkActive="active" (click)="toggleMenu()">Projects</a></li>
+      <li><a (click)="goToLink('https://medium.com/@nomantanveer021/about')">Blog <sup><fa-icon [icon]="faExternalLinkAlt"></fa-icon></sup></a></li>
+    </ul>
+  </nav>
+</header>

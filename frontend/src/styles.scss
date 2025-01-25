@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+/* Define Variables */
+$primary-color: #007BFF;
+$secondary-color: #0056b3;
+$background-color: #333;
+$text-color: #fff;
+$light-gray: #f4f4f4;
+$dark-gray: #575757;
+$max-width: 1200px;
+
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.font-roboto {
+    font-family: 'Roboto', sans-serif;
+}

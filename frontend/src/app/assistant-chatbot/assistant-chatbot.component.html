@@ -1,0 +1,17 @@
+<div class="chat-container">
+    <div class="chat-header">
+      <h2>LLM Assistant</h2>
+    </div>
+    <div class="chat-body" #chatBody>
+      <div *ngFor="let message of messages" [ngClass]="{'user-message': message.user, 'bot-message': !message.user}">
+        <div class="message-content">
+          <span>{{ message.text }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="chat-footer">
+      <input [(ngModel)]="userInput" (keyup.enter)="sendMessage()" placeholder="Type your message here...">
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+  
