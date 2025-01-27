@@ -17,17 +17,25 @@ export class AssistantChatbotComponent {
 
   sendMessage() {
     if (this.userInput.trim()) {
-      const userMessage: Message = { text: this.userInput, user: true };
-      this.chatbotService.addMessage(userMessage);
-      this.userInput = '';
-      this.scrollToBottom();
+      // Add user message
+      this.chatbotService.addMessage({ text: this.userInput, user: true });
+      this.messages = this.chatbotService.getMessages();
+      
+      // Send the message to the backend
+      this.chatbotService.sendMessageToBackend(this.userInput).subscribe({
+        next: (chunk) => {
+          // For streaming, append each chunk received
+          this.chatbotService.addMessage({ text: chunk, user: false });
+          this.messages = this.chatbotService.getMessages();
+        },
+        error: (err) => {
+          // Handle error in response
+          console.error('Error occurred:', err);
+        }
+      });
 
-      // Simulate bot response after a short delay
-      setTimeout(() => {
-        const botMessage: Message = { text: 'I\'m working on the LLM chatbot it would be here soon. Thank you for your patience.', user: false };
-        this.chatbotService.addMessage(botMessage);
-        this.scrollToBottom();
-      }, 1000);
+      // Clear the input
+      this.userInput = '';
     }
   }
 

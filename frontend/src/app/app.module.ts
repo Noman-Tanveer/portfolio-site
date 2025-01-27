@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faLinkedin, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AssistantChatbotComponent } from './assistant-chatbot/assistant-chatbot.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ChatbotService } from './services/chatbot.service'
 
 
 @NgModule({
@@ -24,12 +26,13 @@ import { ProjectsComponent } from './projects/projects.component';
     ProjectsComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     FontAwesomeModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ChatbotService],
   bootstrap: [AppComponent]
 })
 

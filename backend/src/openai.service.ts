@@ -15,12 +15,7 @@ export class OpenAIService {
         messages: [{ role: 'user', content: prompt }],
         stream: true,
         });
-        let result = '';
-        for await (const chunk of openai_stream) {
-            const content = chunk.choices[0]?.delta?.content || '';
-            result += content;
-        }
 
-        return result;
+        return openai_stream;
     }
 }
