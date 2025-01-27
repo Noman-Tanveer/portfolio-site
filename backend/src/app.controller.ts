@@ -5,7 +5,7 @@ import { OpenAIService } from './openai.service';
 export class AppController {
   constructor(private readonly openAIService: OpenAIService) {}
 
-  @Post('stream')
+  @Post('respond')
   async streamMessage(@Req() req) {
     return this.openAIService.createChatCompletion(req.body.message, true);
   }
