@@ -12,7 +12,6 @@ export class OpenAIService {
       stream: true,
     });
     
-    // Use the proper method to stream events from OpenAI
     return this.openai.chat.completions.stream(completion);
   }
 }
