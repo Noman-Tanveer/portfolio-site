@@ -1,18 +1,26 @@
+import { ConfigService } from '@nestjs/config';
+import { Injectable } from '@nestjs/common';
 import { OpenAI } from 'openai';
 
+@Injectable()
 export class OpenAIService {
-  private openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-  });
-
-  async* createChatCompletion(prompt: string, stream: boolean) {
-    const completion = this.openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
-      messages: [{ role: 'user', content: prompt }],
-      stream: true,
+    constructor(private readonly configService: ConfigService) {}
+    private openai = new OpenAI({
+        apiKey: this.configService.get<string>('OPENAI_API_KEY'),
     });
-    
-    // Use the proper method to stream events from OpenAI
-    return this.openai.chat.completions.stream(completion);
-  }
+
+    async createChatCompletion(prompt: string, stream: boolean) {
+        const openai_stream = await this.openai.chat.completions.create({
+        model: "gpt-4o",
+        messages: [{ role: 'user', content: prompt }],
+        stream: true,
+        });
+        let result = '';
+        for await (const chunk of openai_stream) {
+            const content = chunk.choices[0]?.delta?.content || '';
+            result += content;
+        }
+
+        return result;
+    }
 }

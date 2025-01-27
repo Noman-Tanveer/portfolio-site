@@ -59,3 +59,5 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 .aider.tags.cache.v3
 *.angular*
 
+.aider*
+backend/dist/
