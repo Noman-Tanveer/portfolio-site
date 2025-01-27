@@ -1,12 +1,18 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, Post, Stream } from '@nestjs/common';                                                     
+import { OpenAIService } from './openai.service';
 
-@Controller()
+@Controller('openai')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly openAIService: OpenAIService) {} 
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Post('stream')
+  @Stream()
+  async streamMessage(@Req() req) {
+    return this.openAIService.createChatCompletion(req.body.message, true);
+  }
+
+  @Post('health-check')                                                                                        
+  healthCheck() {                                                                                              
+    return { status: 'ok' };
   }
 }
