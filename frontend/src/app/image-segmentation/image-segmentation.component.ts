@@ -8,13 +8,17 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class ImageSegmentationComponent {
-    selectedFile: File | null = null;                                                                                        
-    processedImageUrl: string | null = null;                                                                                 
-                                                                                                                              
-    constructor(private http: HttpClient) {}                                                                                 
-                                                                                                                              
+    selectedFile: File | null = null;
+    uploadedImageUrl: string | null = null;
+    processedImageUrl: string | null = null;
+
+    constructor(private http: HttpClient) {}
+
     onFileSelected(event: any) {
         this.selectedFile = event.target.files[0];
+        if (this.selectedFile) {
+            this.uploadedImageUrl = URL.createObjectURL(this.selectedFile);
+        }
     }
 
     onDragOver(event: DragEvent) {

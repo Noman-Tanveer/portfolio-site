@@ -4,6 +4,11 @@
 </div>
 <button (click)="onUpload()">Upload and Process</button>
 
+<div *ngIf="uploadedImageUrl">
+    <h3>Uploaded Image:</h3>
+    <img [src]="uploadedImageUrl" alt="Uploaded Image" />
+</div>
+
 <div *ngIf="processedImageUrl">
     <h3>Processed Image:</h3>
     <img [src]="processedImageUrl" alt="Processed Image" />
