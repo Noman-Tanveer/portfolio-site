@@ -2,8 +2,6 @@ import { Response } from 'express';
 import { Controller, Post, Get, Req, Res, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { SegmentationService } from './segmentation.service';
-import { FileInterceptor } from '@nestjs/platform-express';                                                                     
-import { SegmentationService } from './segmentation.service';
 import { OpenAIService } from './openai.service';
 import { Observable } from 'rxjs';
 
@@ -32,19 +30,6 @@ export class AppController {
         res.status(500).send('Error occurred during streaming.');
     } finally {
         res.end(); // End the response
-    }
-  }
-
-  @Post('segment-image')
-  @UseInterceptors(FileInterceptor('file'))
-  async uploadImage(@UploadedFile() file: Express.Multer.File, @Res() res: Response) {
-    try {
-      const savedImage = await this.segmentationService.saveImage(file);
-      res.setHeader('Content-Type', savedImage.contentType);
-      res.send(savedImage.data);
-    } catch (error) {
-      console.error('Error saving image:', error);
-      res.status(500).send('Error occurred while saving image.');
     }
   }
 
