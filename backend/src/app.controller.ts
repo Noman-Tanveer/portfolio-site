@@ -1,6 +1,6 @@
 import { Response } from 'express';
 import { Controller, Post, Get, Req, Res, UploadedFile, UseInterceptors } from '@nestjs/common';
-import { Express } from 'express';
+import { UploadedFile } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { SegmentationService } from './segmentation.service';
 import { OpenAIService } from './openai.service';
