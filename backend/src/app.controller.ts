@@ -36,15 +36,14 @@ export class AppController {
 
   @Post('segment-image')                                                                                                        
   @UseInterceptors(FileInterceptor('file'))                                                                                     
-  async uploadImage(@UploadedFile() file: Express.Multer.File, @Res() res: Response) {                                          
-    try {                                                                                                                       
-      const savedImage = await this.segmentationService.saveImage(file);                                                        
-      res.setHeader('Content-Type', savedImage.contentType);                                                                    
-      res.send(savedImage.data);                                                                                                
-    } catch (error) {                                                                                                           
-      console.error('Error saving image:', error);                                                                              
-      res.status(500).send('Error occurred while saving image.');                                                               
-    }                                                                                                                           
+  async uploadImage(@UploadedFile() file: Express.Multer.File, @Res() res: Response) {
+    try {
+      res.setHeader('Content-Type', file.mimetype);
+      res.send(file.buffer);
+    } catch (error) {
+      console.error('Error processing image:', error);
+      res.status(500).send('Error occurred while processing image.');
+    }
   }
 
   @Post('health-check')
