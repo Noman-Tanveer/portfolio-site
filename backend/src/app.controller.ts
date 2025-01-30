@@ -1,16 +1,13 @@
 import { Response } from 'express';
 import { Controller, Post, Get, Req, Res, UploadedFile, UseInterceptors } from '@nestjs/common';
-import { UploadedFile } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { SegmentationService } from './segmentation.service';
 import { OpenAIService } from './openai.service';
 import { Observable } from 'rxjs';
 
 @Controller('app')
 export class AppController {
   constructor(
-    private readonly openAIService: OpenAIService,
-    private readonly segmentationService: SegmentationService
+    private readonly openAIService: OpenAIService
   ) {}
 
   @Post('respond')
@@ -34,8 +31,8 @@ export class AppController {
     }
   }
 
-  @Post('segment-image')                                                                                                        
-  @UseInterceptors(FileInterceptor('file'))                                                                                     
+  @Post('segment-image')
+  @UseInterceptors(FileInterceptor('file'))
   async uploadImage(@UploadedFile() file: Express.Multer.File, @Res() res: Response) {
     try {
       res.setHeader('Content-Type', file.mimetype);
