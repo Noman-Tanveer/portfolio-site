@@ -33,7 +33,7 @@ export class AppController {
 
   @Post('segment-image')
   @UseInterceptors(FileInterceptor('file'))
-  async uploadImage(@UploadedFile() file: Express.Multer.File, @Res() res: Response) {
+  async processImage(@UploadedFile() file: Express.Multer.File, @Res() res: Response) {
     try {
       res.setHeader('Content-Type', file.mimetype);
       res.send(file.buffer);
