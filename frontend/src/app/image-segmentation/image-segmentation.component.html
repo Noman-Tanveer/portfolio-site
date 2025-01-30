@@ -1,7 +1,10 @@
-<input type="file" (change)="onFileSelected($event)" />                                                                    
-<button (click)="onUpload()">Upload and Process</button>                                                                   
-                                                                                                                            
-<div *ngIf="processedImageUrl">                                                                                            
-    <h3>Processed Image:</h3>                                                                                                
-    <img [src]="processedImageUrl" alt="Processed Image" />                                                                  
+<div class="upload-area" (drop)="onDrop($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)">
+    <p>Drag and drop a file here or click to select a file</p>
+    <input type="file" (change)="onFileSelected($event)" />
+</div>
+<button (click)="onUpload()">Upload and Process</button>
+
+<div *ngIf="processedImageUrl">
+    <h3>Processed Image:</h3>
+    <img [src]="processedImageUrl" alt="Processed Image" />
 </div>
