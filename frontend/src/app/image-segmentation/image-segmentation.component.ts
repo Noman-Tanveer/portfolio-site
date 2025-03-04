@@ -36,8 +36,10 @@ export class ImageSegmentationComponent {
     onDrop(event: DragEvent) {
         event.preventDefault();
         event.stopPropagation();
+    
         if (event.dataTransfer && event.dataTransfer.files.length > 0) {
             this.selectedFile = event.dataTransfer.files[0];
+            this.uploadedImageUrl = URL.createObjectURL(this.selectedFile);
             event.dataTransfer.clearData();
         }
     }
