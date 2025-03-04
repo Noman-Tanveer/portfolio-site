@@ -13,7 +13,8 @@ import { FooterComponent } from './footer/footer.component';
 import { AssistantChatbotComponent } from './assistant-chatbot/assistant-chatbot.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { ChatbotService } from './services/chatbot.service'
+import { ChatbotService } from './services/chatbot.service';
+import { ImageSegmentationComponent } from './image-segmentation/image-segmentation.component'
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ChatbotService } from './services/chatbot.service'
     AssistantChatbotComponent,
     HomeComponent,
     ProjectsComponent,
+    ImageSegmentationComponent,
   ],
   imports: [
     HttpClientModule,

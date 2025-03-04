@@ -37,6 +37,7 @@ export class AppController {
     try {
       res.setHeader('Content-Type', file.mimetype);
       res.send(file.buffer);
+      console.log("Funckin hit!")
     } catch (error) {
       console.error('Error processing image:', error);
       res.status(500).send('Error occurred while processing image.');
